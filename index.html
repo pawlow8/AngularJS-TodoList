@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo lista</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+        <div ng-controller="TodoListController" class="todo-list">
+                <h1>Lista Todo</h1>
+                <h3>Pozostało {{remaining()}} z {{list.length}}</h3>
+                <a ng-click="archive()">Usuń ukończone</a>
+                <ul>
+                  <li ng-repeat="item in list">
+                    <input type="checkbox" ng-model="item.done" />
+                    <span>{{item.title}}</span>
+                  </li>
+                </ul>
+                <input type="text" ng-model="newTodo" /><button ng-click="add()">Dodaj</button>
+              </div>            
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> 
+    <script src="./todo.js"></script>
+</body>
+</html>
